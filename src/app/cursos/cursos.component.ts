@@ -5,7 +5,11 @@ import { CursosService } from './cursos.service';
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+  styleUrls: ['./cursos.component.css'],
+  // Para não compartilhar uma mesma instância de serviço por toda a aplicação, é necessário
+  //declarar o serviço dentro do metadado providers do componente que deve ter acesso
+  //ao serviço. Dessa forma, uma instância de serviço será criada para cada component.
+  providers: [CursosService]
 })
 export class CursosComponent implements OnInit {
 

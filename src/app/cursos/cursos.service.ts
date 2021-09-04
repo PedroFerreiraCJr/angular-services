@@ -6,11 +6,21 @@ import { Injectable } from "@angular/core";
 //ser usado.
 @Injectable()
 export class CursosService {
+  cursos: string[] = [
+    'Angular 2',
+    'Java',
+    'Spring Boot'
+  ];
+
+  constructor() {
+    console.log('CursosService');
+  }
+
   public getCursos(): string[] {
-    return [
-      'Angular 2',
-      'Java',
-      'Spring Boot'
-    ];
+    return this.cursos;
+  }
+
+  public adicionar(curso: string): void {
+    this.cursos.push(curso);
   }
 }
