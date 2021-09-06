@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
+import { LogService } from './shared/log.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { CriarCursoModule } from './criar-curso/criar-curso.module';
   //disponível para toda a aplicação.
   // Mesmo declarando o serviço em cada módulo, uma única instancia é compartilhada por
   //toda a aplicação.
-  //providers: [CursosService],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

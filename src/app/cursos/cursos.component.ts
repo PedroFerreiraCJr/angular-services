@@ -19,7 +19,8 @@ export class CursosComponent implements OnInit {
   // No Angular as dependências são resolvidas através do construtor da classe dependente.
   // Uma ultima melhoria pode ser feita para tornar esse atributo privado neste componente,
   //que é usando a palavra-chave 'private'.
-  constructor(private cursosService: CursosService) {
+  constructor(
+    private cursosService: CursosService) {
     // Primeiro exemplo de como obter uma dependência da instância do component.
     // Conforme discutido em aula, foi dito que esta não é a melhor forma de obteção das
     //dependências de qualquer objeto gerenciado pelo Angular.
