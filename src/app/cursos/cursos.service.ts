@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 
 // O primeiro passo para fazer com que essa classe possa ser injetada como dependência de outra
 //é decorá-la com @Injectable()
@@ -6,6 +6,9 @@ import { Injectable } from "@angular/core";
 //ser usado.
 @Injectable()
 export class CursosService {
+  emitirCursoCriado: EventEmitter<string> = new EventEmitter<string>();
+  static criouNovoCurso: EventEmitter<string> = new EventEmitter<string>();
+
   cursos: string[] = [
     'Angular 2',
     'Java',
@@ -22,5 +25,7 @@ export class CursosService {
 
   public adicionar(curso: string): void {
     this.cursos.push(curso);
+    this.emitirCursoCriado.emit(curso);
+    CursosService.criouNovoCurso.emit(curso);
   }
 }

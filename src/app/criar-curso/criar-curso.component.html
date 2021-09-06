@@ -1,4 +1,4 @@
-<h5>Lista de cursos</h5>
+<h5>Compartilhando um serviço entre componentes</h5>
 
 <input type="text" #cursoInput>
 <button (click)="addCurso(cursoInput.value)">Add Curso</button>
@@ -8,3 +8,5 @@
     {{ curso }}
   </li>
 </ul>
+
+<app-receber-curso-criado></app-receber-curso-criado>

@@ -31,5 +31,12 @@ export class CursosComponent implements OnInit {
 
   public ngOnInit(): void {
     this.cursos = this.cursosService.getCursos();
+    // Este método é um método estático definido na classe CursosService, portanto, é
+    //necessário utilizar o nome da classe ao invés do uso do operador 'this'.
+    // Dessa forma, mesmo que o serviço seja criado multiplas vezes, é possível fazer o compartilhamento
+    //de eventos (comunicação) entre componentes que não estão em um relacionamento parent-child.
+    CursosService.criouNovoCurso.subscribe((curso) => {
+      this.cursos.push(curso);
+    });
   }
 }
